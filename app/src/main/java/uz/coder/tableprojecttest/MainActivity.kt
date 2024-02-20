@@ -1,5 +1,7 @@
 package uz.coder.tableprojecttest
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
         binding.addBtn.setOnClickListener {
             val dialog = AlertDialog.Builder(this).create()
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             val addItemBinding = AddItemBinding.inflate(layoutInflater)
             addTextVatcher(addItemBinding)
             dialog.setView(addItemBinding.root).apply {
